@@ -124,7 +124,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: currentColor;
   /* 2 */
 }
 
@@ -552,4 +552,249 @@ video {
 
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
+}
+
+@font-face {
+  font-family: "Poppins";
+
+  src: url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+
+  src: url("../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+
+  src: url("../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Poppins";
+
+  src: url("../fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+
+  src: url("../fonts/Vazirmatn/Vazirmatn-Regular.ttf") format("truetype");
+
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+
+  src: url("../fonts/Vazirmatn/Vazirmatn-SemiBold.ttf") format("truetype");
+
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+
+  src: url("../fonts/Vazirmatn/Vazirmatn-Bold.ttf") format("truetype");
+
+  font-weight: 600;
+}
+
+* {
+  font-family: Vazirmatn;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom-3 {
+  bottom: 0.75rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-\[10vh\] {
+  height: 10vh;
+}
+
+.h-\[14px\] {
+  height: 14px;
+}
+
+.h-\[32px\] {
+  height: 32px;
+}
+
+.h-\[7vh\] {
+  height: 7vh;
+}
+
+.h-\[83vh\] {
+  height: 83vh;
+}
+
+.min-h-\[48px\] {
+  min-height: 48px;
+}
+
+.min-h-\[56px\] {
+  min-height: 56px;
+}
+
+.min-h-\[627px\] {
+  min-height: 627px;
+}
+
+.w-\[132px\] {
+  width: 132px;
+}
+
+.w-\[32px\] {
+  width: 32px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-\[8px\] {
+  gap: 8px;
+}
+
+.border-b-\[1px\] {
+  border-bottom-width: 1px;
+}
+
+.border-t-\[2px\] {
+  border-top-width: 2px;
+}
+
+.border-header-footer-border {
+  border-color: hsla(0, 0%, 92%, 1);
+}
+
+.px-\[56px\] {
+  padding-left: 56px;
+  padding-right: 56px;
+}
+
+.font-\[\'Poppins\'\] {
+  font-family: 'Poppins';
+}
+
+.font-\[400\] {
+  font-weight: 400;
+}
+
+.font-\[700\] {
+  font-weight: 700;
+}
+
+.text-gray-text {
+  color: hsla(0, 0%, 70%, 1);
+}
+
+.before\:relative::before {
+  content: var(--tw-content);
+  position: relative;
+}
+
+.before\:top-\[6px\]::before {
+  content: var(--tw-content);
+  top: 6px;
+}
+
+.before\:mr-\[12px\]::before {
+  content: var(--tw-content);
+  margin-right: 12px;
+}
+
+.before\:inline-block::before {
+  content: var(--tw-content);
+  display: inline-block;
+}
+
+.before\:h-\[20px\]::before {
+  content: var(--tw-content);
+  height: 20px;
+}
+
+.before\:w-\[20px\]::before {
+  content: var(--tw-content);
+  width: 20px;
+}
+
+.before\:bg-\[url\(\'\/assets\/images\/arrow-drop-down\.svg\'\)\]::before {
+  content: var(--tw-content);
+  background-image: url('/assets/images/arrow-drop-down.svg');
+}
+
+.before\:content-\[\'\'\]::before {
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.after\:relative::after {
+  content: var(--tw-content);
+  position: relative;
+}
+
+.after\:top-3::after {
+  content: var(--tw-content);
+  top: 0.75rem;
+}
+
+.after\:ml-2::after {
+  content: var(--tw-content);
+  margin-left: 0.5rem;
+}
+
+.after\:inline-block::after {
+  content: var(--tw-content);
+  display: inline-block;
+}
+
+.after\:h-\[32px\]::after {
+  content: var(--tw-content);
+  height: 32px;
+}
+
+.after\:w-\[32px\]::after {
+  content: var(--tw-content);
+  width: 32px;
+}
+
+.after\:bg-\[url\(\'\/assets\/images\/location\.svg\'\)\]::after {
+  content: var(--tw-content);
+  background-image: url('/assets/images/location.svg');
+}
+
+.after\:content-\[\'\'\]::after {
+  --tw-content: '';
+  content: var(--tw-content);
 }

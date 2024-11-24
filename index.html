@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/output.css">
+    <!-- npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch -->
     <title>Fetch API Weather</title>
 </head>
 <body>
-    
+    <header class="flex justify-between items-center px-[56px] h-[10vh] border-b-[1px] border-header-footer-border min-h-[56px]">
+        <div class="font-['Poppins'] font-[700]">Starweather</div>
+        <div class="h-[32px] font-[400] text-gray-text after:content-[''] after:bg-[url('/assets/images/location.svg')] after:w-[32px] after:h-[32px] after:inline-block after:top-3 after:relative after:ml-2 before:content-[''] before:inline-block before:relative before:bg-[url('/assets/images/arrow-drop-down.svg')] before:w-[20px] before:h-[20px] before:mr-[12px] before:top-[6px] relative bottom-3">انتخاب شهر</div>
+    </header>
+
+    <section class="w-full h-[83vh] min-h-[627px]">
+        
+    </section>
+
+    <footer class="h-[7vh] flex justify-center min-h-[48px] border-t-[2px] border-header-footer-border">
+        <div class="flex justify-between gap-[8px] items-center">
+            <img src="assets/images/made-by-starcoach.svg" alt="" class="w-[132px] h-[14px]">
+            <img src="assets/images/logo.png" alt="" class="w-[32px] h-[32px]">
+        </div>
+    </footer>
 </body>
 </html>
