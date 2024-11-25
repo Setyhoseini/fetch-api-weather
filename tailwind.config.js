@@ -4,6 +4,10 @@ module.exports = {
   theme: {
     extend: {},
 
+    screens: {
+      'sm': '500px',
+    },
+
     colors: {
       'starcoach-logo-text': 'hsla(164, 99%, 40%, 1)',
       'main-text-color': 'hsla(209, 73%, 7%, 1)',

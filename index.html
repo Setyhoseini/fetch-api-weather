@@ -10,11 +10,91 @@
 <body>
     <header class="flex justify-between items-center px-[56px] h-[10vh] border-b-[1px] border-header-footer-border min-h-[56px]">
         <div class="font-['Poppins'] font-[700]">Starweather</div>
-        <div class="h-[32px] font-[400] text-gray-text after:content-[''] after:bg-[url('/assets/images/location.svg')] after:w-[32px] after:h-[32px] after:inline-block after:top-3 after:relative after:ml-2 before:content-[''] before:inline-block before:relative before:bg-[url('/assets/images/arrow-drop-down.svg')] before:w-[20px] before:h-[20px] before:mr-[12px] before:top-[6px] relative bottom-3">انتخاب شهر</div>
+
+        <form action="">
+            <div class="h-[32px] font-[400] after:content-[''] after:bg-[url('/assets/images/location.svg')] after:w-[32px] after:h-[32px] after:inline-block after:top-3 after:relative after:ml-2 before:content-[''] before:inline-block before:relative before:bg-[url('/assets/images/arrow-drop-down.svg')] before:w-[20px] before:h-[20px] before:mr-[12px] before:top-[6px] relative bottom-3 placeholder:text-gray-text placeholder:font-[400]"><input dir="rtl" placeholder="انتخاب شهر" id="input"></div>
+
+            <button id="btn">Click</button>
+
+        </form>
+        
     </header>
 
-    <section class="w-full h-[83vh] min-h-[627px]">
-        
+    <section class="w-full h-[83vh] min-h-[627px] flex items-center justify-center box-border sm:min-h-[700px] pb-[2%]">
+        <div class="max-w-[488px] h-[84%] min-h-[471px] w-[90%] min-w-[343px] bg-pink flex justify-between items-center flex-col sm:min-h-[637px]">
+
+            <div class="h-[70%] w-full flex flex-col justify-between items-center">
+                <div class="w-full flex flex-col justify-between items-center h-[73%]  self-start">
+                    <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[41%]">
+                    <div class="h-[103px] flex flex-col justify-between items-center">
+                        <span id="temp" class="text-main-text-color text-[5rem] max-sm:text-[40px] font-[600] leading-[80px]">27°</span>
+                        <span class="text-gray-text text-[15px]">تهران 23 شهریور</span>
+                    </div>
+
+
+                    
+                </div>
+
+                <div class="h-[21.8%] min-h-[96px] flex flex-col justify-between items-center w-full p-6 box-border text-[15px] font-[500] text-main-text-color gap-[20px] rounded-[12px] border-[1px] border-card-border">
+                    <div class="flex justify-between items-center w-full h-[15px]">
+                        <span class="font-[400]">44 %</span>
+                        <span>رطوبت</span>
+                    </div>
+                    <div class="flex justify-between items-center w-full h-[15px]">
+                        <span class="font-[400]">10 km/h</span>
+                        <span>باد</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="w-full h-[24.4%] min-h-[114px] flex flex-col justify-between">
+                <h1 dir="rtl" class="text-[16px] leading-[16px] text-main-text-color">روزهای آینده‌ی تهران</h1>
+
+                <div id="future-days" class="h-[82.05%] w-full flex justify-between ">
+                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                        <div class=" min-h-[30px] flex flex-col justify-between items-center">
+                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                        </div>
+                    </div>
+
+                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                        <div class=" min-h-[30px] flex flex-col justify-between items-center">
+                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                        </div>
+                    </div>
+
+                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                        <div class=" min-h-[30px] flex flex-col justify-between items-center">
+                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                        </div>
+                    </div>
+
+                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                        <div class=" min-h-[30px] flex flex-col justify-between items-center">
+                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                        </div>
+                    </div>
+
+                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                        <div class=" min-h-[30px] flex flex-col justify-between items-center">
+                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer class="h-[7vh] flex justify-center min-h-[48px] border-t-[2px] border-header-footer-border">
@@ -23,5 +103,9 @@
             <img src="assets/images/logo.png" alt="" class="w-[32px] h-[32px]">
         </div>
     </footer>
+
+
+
+    <script src="script.js"></script>
 </body>
 </html>
