@@ -28,7 +28,7 @@
                     <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[41%]">
                     <div class="h-[103px] flex flex-col justify-between items-center">
                         <span id="temp" class="text-main-text-color text-[5rem] max-sm:text-[40px] font-[600] leading-[80px]">27°</span>
-                        <span class="text-gray-text text-[15px]">تهران 23 شهریور</span>
+                        <span id="city-day" dir="rtl" class="text-gray-text text-[15px]">تهران 23 شهریور</span>
                     </div>
 
 
@@ -37,11 +37,11 @@
 
                 <div class="h-[21.8%] min-h-[96px] flex flex-col justify-between items-center w-full p-6 box-border text-[15px] font-[500] text-main-text-color gap-[20px] rounded-[12px] border-[1px] border-card-border">
                     <div class="flex justify-between items-center w-full h-[15px]">
-                        <span class="font-[400]">44 %</span>
+                        <span id="humidity" class="font-[400]">44 %</span>
                         <span>رطوبت</span>
                     </div>
                     <div class="flex justify-between items-center w-full h-[15px]">
-                        <span class="font-[400]">10 km/h</span>
+                        <span id="wind-speed" class="font-[400]">10 km/h</span>
                         <span>باد</span>
                     </div>
                 </div>
@@ -52,44 +52,44 @@
             <div class="w-full h-[24.4%] min-h-[114px] flex flex-col justify-between">
                 <h1 dir="rtl" class="text-[16px] leading-[16px] text-main-text-color">روزهای آینده‌ی تهران</h1>
 
-                <div id="future-days" class="h-[82.05%] w-full flex justify-between ">
-                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
-                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                <div id="future-days" dir="rtl" class="h-[82.05%] w-full flex justify-between ">
+                    <div id="day-1" class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition1" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
                         <div class=" min-h-[30px] flex flex-col justify-between items-center">
-                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
-                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                            <span dir="ltr" id="temp1" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span id="day1" class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
                         </div>
                     </div>
 
-                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
-                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                    <div id="day-2" class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition2" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
                         <div class=" min-h-[30px] flex flex-col justify-between items-center">
-                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
-                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                            <span dir="ltr" id="temp2" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span id="day2" class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
                         </div>
                     </div>
 
-                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
-                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                    <div id="day-3" class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition3" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
                         <div class=" min-h-[30px] flex flex-col justify-between items-center">
-                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
-                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                            <span dir="ltr" id="temp3" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span id="day3" class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
                         </div>
                     </div>
 
-                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
-                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                    <div id="day-4" class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition4" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
                         <div class=" min-h-[30px] flex flex-col justify-between items-center">
-                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
-                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                            <span dir="ltr" id="temp4" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span id="day4" class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
                         </div>
                     </div>
 
-                    <div class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
-                        <img id="condition" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
+                    <div id="day-5" class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
+                        <img id="condition5" src="assets/images/01_sunny_color.svg" alt="" class="w-[54.54%] h-[37.5%] mb-1">
                         <div class=" min-h-[30px] flex flex-col justify-between items-center">
-                            <span id="temp" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
-                            <span class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
+                            <span dir="ltr" id="temp5" class="text-main-text-color text-[20px] max-sm:text-[14px] font-[600]">27°</span>
+                            <span id="day5" class="text-main-text-color text-[14px] max-sm:text-[12px]">سه‌شنبه</span>
                         </div>
                     </div>
                 </div>
