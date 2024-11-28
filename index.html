@@ -7,15 +7,12 @@
     <!-- npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch -->
     <title>Fetch API Weather</title>
 </head>
-<body>
+<body class="relative">
     <header class="flex justify-between items-center px-[56px] h-[10vh] border-b-[1px] border-header-footer-border min-h-[56px]">
         <div class="font-['Poppins'] font-[700]">Starweather</div>
 
         <form action="">
-            <div class="h-[32px] font-[400] after:content-[''] after:bg-[url('/assets/images/location.svg')] after:w-[32px] after:h-[32px] after:inline-block after:top-3 after:relative after:ml-2 before:content-[''] before:inline-block before:relative before:bg-[url('/assets/images/arrow-drop-down.svg')] before:w-[20px] before:h-[20px] before:mr-[12px] before:top-[6px] relative bottom-3 placeholder:text-gray-text placeholder:font-[400]"><input dir="rtl" placeholder="انتخاب شهر" id="input"></div>
-
-            <button id="btn">Click</button>
-
+            <div class="h-[32px] font-[400] after:content-[''] after:bg-[url('/assets/images/location.svg')] after:w-[32px] after:h-[32px] after:inline-block after:top-3 after:relative after:ml-2 before:content-[''] before:inline-block before:relative before:bg-[url('/assets/images/arrow-drop-down.svg')] before:w-[20px] before:h-[20px] before:mr-[12px] before:top-[6px] relative bottom-3 placeholder:text-gray-text placeholder:font-[400]"><input dir="rtl" placeholder="انتخاب شهر" id="input" class="py-2 px-2 w-[150px]"></div>
         </form>
         
     </header>
@@ -50,7 +47,7 @@
             
             
             <div class="w-full h-[24.4%] min-h-[114px] flex flex-col justify-between">
-                <h1 dir="rtl" class="text-[16px] leading-[16px] text-main-text-color">روزهای آینده‌ی تهران</h1>
+                <h1 dir="rtl" class="text-[16px] leading-[16px] text-main-text-color">روزهای آینده‌ی <span id="future-days-title"></span></h1>
 
                 <div id="future-days" dir="rtl" class="h-[82.05%] w-full flex justify-between ">
                     <div id="day-1" class="h-full w-[18.03%] flex flex-col justify-between rounded-[6px] border-[0.8px] border-card-border items-center box-border min-h-[88px] py-[12px] gap-1">
@@ -104,6 +101,9 @@
         </div>
     </footer>
 
+
+    <div id="list" class="flex flex-col w-[220px] absolute top-[10vh] right-[95px] max-h-[500px] overflow-y-scroll overflow-x-hidden">
+    </div>
 
 
     <script src="script.js"></script>

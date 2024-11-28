@@ -1,5 +1,3 @@
-const btn = document.getElementById('btn');
-
 async function getData(city) {
     let weather = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=PPNU9JCK2J63WJATWK8989VW4`)
     .then(r => r.json());
@@ -21,10 +19,11 @@ async function getData(city) {
 
     const humidity = weather.days[0].humidity + ' %';
     const speed = weather.days[0].windspeed + " km/h";
-
+    const faName = await fetch('./cities.json').then((res) => res.json()).then((data) => data[city]);
+    document.getElementById('future-days-title').innerHTML = faName;
     
     const today = getFaDate();
-    const date_string = (today['day'].startsWith('۰') ? today['day'][1] : today['day']) + ' ' + today['monthTitle'];
+    const date_string = faName + ' ' + (today['day'].startsWith('۰') ? today['day'][1] : today['day']) + ' ' + today['monthTitle'];
     const day = today['dayWeek'];
 
     document.getElementById('temp').innerHTML = temp0 + '°';
@@ -193,7 +192,6 @@ async function getData(city) {
 }
 
 
-
 function getFaDate() {
     const today = Date.now();
  
@@ -217,23 +215,85 @@ function getFaDate() {
 
 
 
-function setData() {
+function fetchJSONData() {
+    fetch("./cities.json")
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error
+                    (`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then((data) => {
+            var list = document.getElementById('list');
+            let i = 0;
+            while (i < 5000) {
+                if (Object.keys(data)[i]==undefined) {break};
+                const btn = document.createElement('button');
+                btn.className = "hidden btn w-full flex justify-between border-b-[1px] border-card-border py-2 px-2 hover:bg-header-footer-border bg-[hsla(0, 0%, 100%, 1)]";
+                const span1 = document.createElement('span');
+                span1.className = 'text-left';
+                span1.innerHTML = Object.keys(data)[i];
+                const span2 = document.createElement('span');
+                span2.innerHTML = data[Object.keys(data)[i]];
+                span2.className = 'text-right';
+                btn.appendChild(span1);
+                btn.appendChild(span2);
+                list.appendChild(btn);
+                btn.setAttribute('id', span1.innerHTML);
+                i += 1;
+            }
 
+            const btns = document.getElementsByClassName('btn');
+[...btns].forEach(element => {
+    element.addEventListener('click', (e) => {
+        e.preventDefault();
+        getData(element.firstChild.innerHTML);
+    }) 
+});
+        })
+        .catch((error) =>
+            console.error("Unable to fetch data:", error));
 }
 
 
 
 
-btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const city = document.getElementById('input').value;
-    console.log(city);
-    
-    getData(city);
-    
+
+
+function renderList(s) {
+    fetch("./cities.json")
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error
+                    (`HTTP error! Status: ${res.status}`);
+            }
+            return res.json();
+        })
+        .then((data) => {
+            Object.keys(data).forEach(element => {
+                if (element.includes(s) || data[element].includes(s)) {
+                    document.getElementById(element).classList.remove('hidden');
+                }
+                if (!element.includes(s) && !data[element].includes(s)) {
+                    document.getElementById(element).classList.add('hidden');
+                }
+            });
+        })
+        .catch((error) =>
+            console.error("Unable to fetch data:", error));
+}
+
+
+
+
+
+const input = document.getElementById('input');
+input.addEventListener('input', () => {
+    renderList(input.value);
 });
 
-
+fetchJSONData();
 
 /* const getCityFa = async (city) => {
     const query = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=933cd2a4a5657b4a01c3d56783cb1e30`;

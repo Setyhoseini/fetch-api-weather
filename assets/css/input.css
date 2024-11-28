@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+
+button {
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+  position: relative;
+  left: 20px;
+  width: 5px;
+  height: 5px;
+  margin-left: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(242, 244, 247, 1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
 @layer base {
     @font-face {
         font-family: "Poppins";
