@@ -291,37 +291,25 @@ function renderList(s) {
 const input = document.getElementById('input');
 input.addEventListener('input', () => {
     renderList(input.value);
+    document.getElementById('list').classList.remove('hidden');
 });
+input.addEventListener('click', () => {
+    document.getElementById('list').classList.remove('hidden');
+});
+
+
+
+window.onclick = function(event) {
+    if (!event.target.matches('#input') && !event.target.matches('#list')) {
+      document.getElementById('list').classList.add('hidden');
+    }
+  }
+
+
+
 
 fetchJSONData();
 
-/* const getCityFa = async (city) => {
-    const query = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=933cd2a4a5657b4a01c3d56783cb1e30`;
-    const response = await fetch(query);
-    const data = await response.json();
-    if (data!=undefined && data[0]!=undefined && data[0]['local_names']!=undefined) {return data[0]['local_names']['fa']};
-}
-async function fetchJSONData() {
-    fetch("./cities.json")
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error
-                    (`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then(async (data) => {
-            
-            for (let i = 111081; i < cities.length; i++) {
-                const name = cities[i];
-                const fa = await getCityFa(name);
-                if (fa != undefined) console.log('"' + name + '":' + ' "' + fa + '"'); 
-            } 
-        })
-        .catch((error) =>
-            console.error("Unable to fetch data:", error));
-} */
-
-
+getData('Tehran');
 
 

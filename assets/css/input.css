@@ -7,6 +7,10 @@ button {
   background-color: white;
 }
 
+#list {
+  top: calc(10vh - 30px);
+}
+
 ::-webkit-scrollbar {
   position: relative;
   left: 20px;
