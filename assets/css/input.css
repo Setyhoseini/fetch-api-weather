@@ -8,7 +8,12 @@ button {
 }
 
 #list {
-  top: calc(10vh - 30px);
+  top: max(56px, 10vh);
+  right: calc(52px + 2vw);
+}
+
+.btn {
+  background-color: rgb(228, 241, 254);
 }
 
 ::-webkit-scrollbar {

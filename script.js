@@ -1,6 +1,28 @@
-async function getData(city) {
-    let weather = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=PPNU9JCK2J63WJATWK8989VW4`)
-    .then(r => r.json());
+function farToCelc(temp) {
+    return ((Number(temp)-32)*5/9).toFixed(1);
+}
+
+function setWeekDays(start) {
+    let el1 = document.getElementById('day1');
+    let el2 = document.getElementById('day2');
+    let el3 = document.getElementById('day3');
+    let el4 = document.getElementById('day4');
+    let el5 = document.getElementById('day5');
+
+    const weekdays = ["شنبه", "یک‌شنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنج‌شنبه", "جمعه"];
+
+    const startingIndex = weekdays.indexOf(start);
+
+    el1.innerHTML = weekdays[(startingIndex+1)%7];
+    el2.innerHTML = weekdays[(startingIndex+2)%7];
+    el3.innerHTML = weekdays[(startingIndex+3)%7];
+    el4.innerHTML = weekdays[(startingIndex+4)%7];
+    el5.innerHTML = weekdays[(startingIndex+5)%7];
+}
+
+function setWeatherIcons(weather) {
+    const hours = new Date(). getHours()
+    const isDayTime = hours > 6 && hours < 20;
 
     const condition0 = weather.days[0].conditions;
     const condition1 = weather.days[1].conditions;
@@ -9,45 +31,12 @@ async function getData(city) {
     const condition4 = weather.days[4].conditions;
     const condition5 = weather.days[5].conditions;
 
-
-    const temp0 = ((Number(weather.days[0].temp)-32)*5/9).toFixed(1);
-    const temp1 = ((Number(weather.days[1].temp)-32)*5/9).toFixed(1);
-    const temp2 = ((Number(weather.days[2].temp)-32)*5/9).toFixed(1);
-    const temp3 = ((Number(weather.days[3].temp)-32)*5/9).toFixed(1);
-    const temp4 = ((Number(weather.days[4].temp)-32)*5/9).toFixed(1);
-    const temp5 = ((Number(weather.days[5].temp)-32)*5/9).toFixed(1);
-
-    const humidity = weather.days[0].humidity + ' %';
-    const speed = weather.days[0].windspeed + " km/h";
-    const faName = await fetch('./cities.json').then((res) => res.json()).then((data) => data[city]);
-    document.getElementById('future-days-title').innerHTML = faName;
-    
-    const today = getFaDate();
-    const date_string = faName + ' ' + (today['day'].startsWith('۰') ? today['day'][1] : today['day']) + ' ' + today['monthTitle'];
-    const day = today['dayWeek'];
-
-    document.getElementById('temp').innerHTML = temp0 + '°';
-    document.getElementById('city-day').innerHTML = date_string;
-    document.getElementById('humidity').innerHTML = humidity;
-    document.getElementById('wind-speed').innerHTML = speed;
-
     const img0 = document.getElementById('condition');
     const img1 = document.getElementById('condition1');
     const img2 = document.getElementById('condition2');
     const img3 = document.getElementById('condition3');
     const img4 = document.getElementById('condition4');
     const img5 = document.getElementById('condition5');
-
-    document.getElementById('temp1').innerHTML = temp1 + '°';
-    document.getElementById('temp2').innerHTML = temp2 + '°';
-    document.getElementById('temp3').innerHTML = temp3 + '°';
-    document.getElementById('temp4').innerHTML = temp4 + '°';
-    document.getElementById('temp5').innerHTML = temp5 + '°';
-
-    const hours = new Date(). getHours()
-    const isDayTime = hours > 6 && hours < 20;
-
-   
 
     for (let i = 0; i < 6; i++) {
         let x;
@@ -138,59 +127,52 @@ async function getData(city) {
             img.setAttribute('src', "assets/images/40_rainbow_color.svg");
         }
     }
-
-
-    if (day=="شنبه") {
-        document.getElementById('day1').innerHTML = "یک‌شنبه";
-        document.getElementById('day2').innerHTML = "دوشنبه";
-        document.getElementById('day3').innerHTML = "سه‌شنبه";
-        document.getElementById('day4').innerHTML = "چهارشنبه";
-        document.getElementById('day5').innerHTML = "پنج‌شنبه";
-    }
-    if (day=="یکشنبه") {
-        document.getElementById('day1').innerHTML = "دوشنبه";
-        document.getElementById('day2').innerHTML = "سه‌شنبه";
-        document.getElementById('day3').innerHTML = "چهارشنبه";
-        document.getElementById('day4').innerHTML = "پنج‌شنبه";
-        document.getElementById('day5').innerHTML = "جمعه";
-    }
-    if (day=="دوشنبه") {
-        document.getElementById('day1').innerHTML = "سه‌شنبه";
-        document.getElementById('day2').innerHTML = "چهارشنبه";
-        document.getElementById('day3').innerHTML = "پنج‌شنبه";
-        document.getElementById('day4').innerHTML = "جمعه";
-        document.getElementById('day5').innerHTML = "شنبه";
-    }
-    if (day=="سه‌شنبه") {
-        document.getElementById('day1').innerHTML = "چهارشنبه";
-        document.getElementById('day2').innerHTML = "پنج‌شنبه";
-        document.getElementById('day3').innerHTML = "جمعه";
-        document.getElementById('day4').innerHTML = "شنبه";
-        document.getElementById('day5').innerHTML = "یک‌شنبه";
-    }
-    if (day=="چهارشنبه") {
-        document.getElementById('day1').innerHTML = "پنج‌شنبه";
-        document.getElementById('day2').innerHTML = "جمعه";
-        document.getElementById('day3').innerHTML = "شنبه";
-        document.getElementById('day4').innerHTML = "دوشنبه";
-        document.getElementById('day5').innerHTML = "سه‌شنبه";
-    }
-    if (day=="پنجشنبه") {
-        document.getElementById('day1').innerHTML = "جمعه";
-        document.getElementById('day2').innerHTML = "شنبه";
-        document.getElementById('day3').innerHTML = "یک‌شنبه";
-        document.getElementById('day4').innerHTML = "دوشنبه";
-        document.getElementById('day5').innerHTML = "سه‌شنبه";
-    }
-    if (day=="جمعه") {
-        document.getElementById('day1').innerHTML = "شنبه";
-        document.getElementById('day2').innerHTML = "یک‌شنبه";
-        document.getElementById('day3').innerHTML = "دوشنبه";
-        document.getElementById('day4').innerHTML = "سه‌شنبه";
-        document.getElementById('day5').innerHTML = "چهارشنبه";
-    }
 }
 
+function setTemps(weather) {
+    const temp0 = farToCelc(weather.days[0].temp);
+    const temp1 = farToCelc(weather.days[1].temp);
+    const temp2 = farToCelc(weather.days[2].temp);
+    const temp3 = farToCelc(weather.days[3].temp);
+    const temp4 = farToCelc(weather.days[4].temp);
+    const temp5 = farToCelc(weather.days[5].temp);
+
+    document.getElementById('temp').innerHTML = temp0 + '°';
+    document.getElementById('temp1').innerHTML = temp1 + '°';
+    document.getElementById('temp2').innerHTML = temp2 + '°';
+    document.getElementById('temp3').innerHTML = temp3 + '°';
+    document.getElementById('temp4').innerHTML = temp4 + '°';
+    document.getElementById('temp5').innerHTML = temp5 + '°';
+}
+
+async function getData(city) {
+    let weather = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=PPNU9JCK2J63WJATWK8989VW4`)
+    .then(r => {
+        
+        if (!r.ok) {
+            alert("اطلاعاتی یافت نشد! :(");
+            throw new Error
+                (`HTTP error! Status: ${r.status}`);   
+        }
+        return r.json() });
+
+    const humidity = weather.days[0].humidity + ' %';
+    const speed = weather.days[0].windspeed + " km/h";
+    const faName = await fetch('./cities.json').then((res) => res.json()).then((data) => data[city]);
+    document.getElementById('future-days-title').innerHTML = faName;
+    
+    const today = getFaDate();
+    const date_string = faName + ' ' + (today['day'].startsWith('۰') ? today['day'][1] : today['day']) + ' ' + today['monthTitle'];
+    const day = today['dayWeek'];
+
+    setWeekDays(day);
+    setWeatherIcons(weather);
+    setTemps(weather);
+
+    document.getElementById('city-day').innerHTML = date_string;
+    document.getElementById('humidity').innerHTML = humidity;
+    document.getElementById('wind-speed').innerHTML = speed;
+}
 
 function getFaDate() {
     const today = Date.now();
@@ -211,56 +193,6 @@ function getFaDate() {
     return todayFa;
 }
 
-
-
-
-
-function fetchJSONData() {
-    fetch("./cities.json")
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error
-                    (`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then((data) => {
-            var list = document.getElementById('list');
-            let i = 0;
-            while (i < 5000) {
-                if (Object.keys(data)[i]==undefined) {break};
-                const btn = document.createElement('button');
-                btn.className = "hidden btn w-full flex justify-between border-b-[1px] border-card-border py-2 px-2 hover:bg-header-footer-border bg-[hsla(0, 0%, 100%, 1)]";
-                const span1 = document.createElement('span');
-                span1.className = 'text-left';
-                span1.innerHTML = Object.keys(data)[i];
-                const span2 = document.createElement('span');
-                span2.innerHTML = data[Object.keys(data)[i]];
-                span2.className = 'text-right';
-                btn.appendChild(span1);
-                btn.appendChild(span2);
-                list.appendChild(btn);
-                btn.setAttribute('id', span1.innerHTML);
-                i += 1;
-            }
-
-            const btns = document.getElementsByClassName('btn');
-[...btns].forEach(element => {
-    element.addEventListener('click', (e) => {
-        e.preventDefault();
-        getData(element.firstChild.innerHTML);
-    }) 
-});
-        })
-        .catch((error) =>
-            console.error("Unable to fetch data:", error));
-}
-
-
-
-
-
-
 function renderList(s) {
     fetch("./cities.json")
         .then((res) => {
@@ -272,10 +204,10 @@ function renderList(s) {
         })
         .then((data) => {
             Object.keys(data).forEach(element => {
-                if (element.includes(s) || data[element].includes(s)) {
+                if ((element.toLowerCase()).includes(s.toLowerCase()) || (data[element].toLowerCase()).includes(s.toLowerCase())) {
                     document.getElementById(element).classList.remove('hidden');
                 }
-                if (!element.includes(s) && !data[element].includes(s)) {
+                if (!(element.toLowerCase()).includes(s.toLowerCase()) && !(data[element].toLowerCase()).includes(s.toLowerCase())) {
                     document.getElementById(element).classList.add('hidden');
                 }
             });
@@ -285,31 +217,32 @@ function renderList(s) {
 }
 
 
-
-
-
 const input = document.getElementById('input');
 input.addEventListener('input', () => {
     renderList(input.value);
     document.getElementById('list').classList.remove('hidden');
+    
 });
 input.addEventListener('click', () => {
     document.getElementById('list').classList.remove('hidden');
 });
 
-
-
 window.onclick = function(event) {
     if (!event.target.matches('#input') && !event.target.matches('#list')) {
       document.getElementById('list').classList.add('hidden');
     }
-  }
-
-
-
-
-fetchJSONData();
+}
 
 getData('Tehran');
 
-
+w = new Worker("cities-buttons-creator.js");
+w.onmessage = function(event) {
+    document.getElementById("list").innerHTML = event.data;
+    const btns = document.getElementById('list').childNodes;
+    btns.forEach((element) => {console.log(element);
+    element.addEventListener('click', (e) => {
+    e.preventDefault();
+    getData(element.id);
+  }) ;
+});
+};

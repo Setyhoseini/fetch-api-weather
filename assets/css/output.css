@@ -622,16 +622,9 @@ video {
   position: relative;
 }
 
-.bottom-3 {
-  bottom: 0.75rem;
-}
-
-.right-\[95px\] {
-  right: 95px;
-}
-
-.top-\[10vh\] {
-  top: 10vh;
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mb-1 {
@@ -664,6 +657,10 @@ video {
 
 .h-\[15px\] {
   height: 15px;
+}
+
+.h-\[20px\] {
+  height: 20px;
 }
 
 .h-\[21\.8\%\] {
@@ -746,16 +743,20 @@ video {
   min-height: 96px;
 }
 
+.w-\[100px\] {
+  width: 100px;
+}
+
 .w-\[132px\] {
   width: 132px;
 }
 
-.w-\[150px\] {
-  width: 150px;
-}
-
 .w-\[18\.03\%\] {
   width: 18.03%;
+}
+
+.w-\[20px\] {
+  width: 20px;
 }
 
 .w-\[220px\] {
@@ -790,6 +791,10 @@ video {
   max-width: 488px;
 }
 
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -816,6 +821,10 @@ video {
 
 .gap-\[8px\] {
   gap: 8px;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .self-start {
@@ -871,9 +880,9 @@ video {
   padding-right: 0.5rem;
 }
 
-.px-\[56px\] {
-  padding-left: 56px;
-  padding-right: 56px;
+.px-\[20px\] {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .py-2 {
@@ -900,6 +909,10 @@ video {
 
 .font-\[\'Poppins\'\] {
   font-family: 'Poppins';
+}
+
+.text-\[13px\] {
+  font-size: 13px;
 }
 
 .text-\[14px\] {
@@ -959,7 +972,12 @@ button {
 }
 
 #list {
-  top: calc(10vh - 30px);
+  top: max(56px, 10vh);
+  right: calc(52px + 2vw);
+}
+
+.btn {
+  background-color: rgb(228, 241, 254);
 }
 
 ::-webkit-scrollbar {
@@ -1005,88 +1023,13 @@ button {
   color: hsla(0, 0%, 70%, 1);
 }
 
-.before\:relative::before {
-  content: var(--tw-content);
-  position: relative;
-}
-
-.before\:top-\[6px\]::before {
-  content: var(--tw-content);
-  top: 6px;
-}
-
-.before\:mr-\[12px\]::before {
-  content: var(--tw-content);
-  margin-right: 12px;
-}
-
-.before\:inline-block::before {
-  content: var(--tw-content);
-  display: inline-block;
-}
-
-.before\:h-\[20px\]::before {
-  content: var(--tw-content);
-  height: 20px;
-}
-
-.before\:w-\[20px\]::before {
-  content: var(--tw-content);
-  width: 20px;
-}
-
-.before\:bg-\[url\(\'\/assets\/images\/arrow-drop-down\.svg\'\)\]::before {
-  content: var(--tw-content);
-  background-image: url('/assets/images/arrow-drop-down.svg');
-}
-
-.before\:content-\[\'\'\]::before {
-  --tw-content: '';
-  content: var(--tw-content);
-}
-
-.after\:relative::after {
-  content: var(--tw-content);
-  position: relative;
-}
-
-.after\:top-3::after {
-  content: var(--tw-content);
-  top: 0.75rem;
-}
-
-.after\:ml-2::after {
-  content: var(--tw-content);
-  margin-left: 0.5rem;
-}
-
-.after\:inline-block::after {
-  content: var(--tw-content);
-  display: inline-block;
-}
-
-.after\:h-\[32px\]::after {
-  content: var(--tw-content);
-  height: 32px;
-}
-
-.after\:w-\[32px\]::after {
-  content: var(--tw-content);
-  width: 32px;
-}
-
-.after\:bg-\[url\(\'\/assets\/images\/location\.svg\'\)\]::after {
-  content: var(--tw-content);
-  background-image: url('/assets/images/location.svg');
-}
-
-.after\:content-\[\'\'\]::after {
-  --tw-content: '';
-  content: var(--tw-content);
-}
-
 .hover\:bg-header-footer-border:hover {
   background-color: hsla(0, 0%, 92%, 1);
+}
+
+.hover\:bg-\[rgb\(255\2c 255\2c 255\)\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 @media not all and (min-width: 500px) {
@@ -1110,5 +1053,26 @@ button {
 
   .sm\:min-h-\[700px\] {
     min-height: 700px;
+  }
+
+  .sm\:w-\[120px\] {
+    width: 120px;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:gap-0 {
+    gap: 0px;
+  }
+
+  .sm\:px-\[56px\] {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .sm\:text-\[16px\] {
+    font-size: 16px;
   }
 }
